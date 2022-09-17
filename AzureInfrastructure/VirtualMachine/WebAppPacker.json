@@ -1,0 +1,55 @@
+{
+    "builders": [{
+      "type": "azure-arm",
+  
+      "client_id": "803b9302-da21-4991-aa3b-bcfc49f008dd",
+      "client_secret": "mKP8Q~VEJ1qxt3tBAVnqWTGzAwHHV9aweBwD4dig",
+      "tenant_id": "c5bc0c5a-3111-4546-8b2a-7cd6f55984bd",
+      "subscription_id": "117079f6-a409-403d-827d-27cf5fa02f3e",
+  
+      "managed_image_resource_group_name": "rg-vm-webapp",
+      "managed_image_name": "myPackerImage3",
+  
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "18.04-LTS",
+  
+      "azure_tags": {
+          "dept": "Engineering",
+          "task": "Image deployment"
+      },
+  
+      "location": "Central US",
+      "vm_size": "Standard_B2s"
+    }],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "../../server.js",
+            "destination": "/tmp/server.js"
+        },
+        {
+            "type": "file",
+            "source": "../../package.json",
+            "destination": "/tmp/package.json"
+        },
+        {
+            "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+            "inline": [
+                "apt-get update",
+                "apt-get upgrade -y",
+                "apt-get install -y nodejs npm",
+                "chmod 755 /opt",
+                "mv /tmp/package.json /opt",
+                "mv /tmp/server.js /opt",
+                "useradd -m azureuser -p 'xcX>zwfQY33_Y^_'",
+                "npm --prefix /opt install",
+        
+                "/usr/sbin/waagent -force -deprovision && export HISTSIZE=0 && sync"
+            ],
+            "inline_shebang": "/bin/sh -x",
+            "type": "shell"
+        }
+    ]
+  }

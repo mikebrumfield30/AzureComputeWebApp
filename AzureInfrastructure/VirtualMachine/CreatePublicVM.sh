@@ -48,6 +48,6 @@ az vm run-command invoke \
     -g $RG \
     -n $VM_NAME \
     --command-id 'RunShellScript' \
-    --scripts "sudo apt-get update; sudo apt-get install -y nodejs npm;sudo npm --prefix /home/$ROOT_USER install;sudo nohup node /home/$ROOT_USER/server.js &" 
+    --scripts "sudo apt-get update; sudo apt-get install -y nodejs npm;sudo npm --prefix /home/$ROOT_USER install;sudo nohup node /home/$ROOT_USER/server.js 2>&1 </dev/null &" 
 
 echo "Application running at 'http://$IP'"
