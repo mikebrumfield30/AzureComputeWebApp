@@ -1,0 +1,10 @@
+.virtual_machine_feed {
+    display: flex;
+    flex-direction: column;
+}
+
+.virtual_machine_feed > h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2596be;
+}

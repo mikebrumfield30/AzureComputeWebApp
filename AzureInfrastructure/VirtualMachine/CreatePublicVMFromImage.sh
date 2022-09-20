@@ -1,8 +1,8 @@
 
 
 IMAGE_NAME=$1
+VM_NAME=$2
 RG='rg-vm-webapp'
-VM_NAME='myCustomVM'
 
 
 echo 'Creating VM'

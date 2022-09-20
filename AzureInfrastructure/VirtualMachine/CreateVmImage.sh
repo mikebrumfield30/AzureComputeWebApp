@@ -1,8 +1,7 @@
 #! /bin/bash
 
 RG='rg-vm-webapp'
-VM_NAME='myCustomVM2'
-IMAGE_NAME='SimpleWebApp'
+IMAGE_NAME=$1
 LOCATION='centralus'
 RBAC_NAME='VMImage'
 

@@ -1,0 +1,26 @@
+.virual_machine_item {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto 1em auto;
+    border: 1px solid #3a86ff;
+    border-radius: 2em; 
+    min-width: 40vw;
+}
+
+.vm_name > p {
+    text-align: center;
+    width: 100%;
+    color: #3a86ff;
+    font-size: 2rem;
+}
+
+.vm-data-row {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vm-data-row > p {
+    font-weight: 700;
+}

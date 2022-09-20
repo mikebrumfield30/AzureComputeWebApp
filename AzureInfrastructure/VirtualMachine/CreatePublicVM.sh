@@ -1,7 +1,7 @@
 #! /bin/bash
 
 RG='rg-vm-webapp'
-VM_NAME='myWebAppVM'
+VM_NAME=$1
 ROOT_USER='azureuser'
 LOCATION='centralus'
 

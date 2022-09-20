@@ -1,0 +1,16 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "Simple API Server that ",
+  "main": "api-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/arm-compute": "^19.1.0",
+    "@azure/identity": "^2.1.0",
+    "cors": "^2.8.5"
+  }
+}
